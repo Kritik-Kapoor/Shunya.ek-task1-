@@ -15,7 +15,7 @@ body {
   justify-content: center;
   align-items: center;
   flex: 1;
-  min-width: 440px;
+  min-width: 450px;
 }
 .right-half {
   display: flex;
@@ -45,7 +45,7 @@ body {
   z-index: 1;
   background-color: #3c3f54;
   max-height: 20px;
-  padding: 10px;
+  padding: 14px;
   margin: 20px;
   border-radius: 8px;
   position: fixed;
@@ -89,12 +89,13 @@ input {
 #project_text {
   display: flex;
   text-align: center;
-  width: 100px;
+  width: 100%;
   color: white;
   margin-top: 40px;
   gap: 0.5rem;
 }
 #left-text {
+  width: 100%;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -230,6 +231,19 @@ input {
   justify-content: center;
   padding: 10px;
 }
+#lorem_text {
+  color: grey;
+  margin-top: 10px;
+}
+.content-box {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  overflow: auto;
+  margin-top: 30px;
+}
 .header2 {
   font-size: 20px;
   margin-top: 40px;
@@ -244,7 +258,7 @@ input {
   flex-direction: column;
   width: 100%;
   background-color: white;
-  box-sizing: border-box;
+  border: none;
 }
 .today-container > div {
   display: flex;
@@ -290,7 +304,6 @@ input {
   width: 100%;
   background-color: white;
   justify-content: flex-start;
-  box-sizing: border-box;
 }
 .upcoming-container > div {
   display: flex;
@@ -321,39 +334,294 @@ input {
   z-index: 1;
   background-color: #8a4ec7;
   border-radius: 12px;
-  padding: 10px;
+  padding: 14px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
-.content-box {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  background-color: white;
-  width: 100%;
-  overflow: auto;
-  margin-top: 30px;
-}
-@media only screen and (max-width: 1040px) {
+/* RESPONSIVE CSS */
+
+@media only screen and (max-width: 1040px) and (min-width: 784px) {
   #container {
     flex-direction: column;
-  }
-  .right-half {
-    min-width: 630px;
   }
   .left-half {
     min-width: 400px;
   }
-}
-@media only screen and (max-width: 640px) {
-  #container {
-    flex-direction: column;
+  .left-container {
+    width: 450px;
+    margin-top: 50px;
+  }
+  #options-button {
+    padding: 14px;
+    border-radius: 10px;
+  }
+  .header {
+    font-size: 1.3rem;
+  }
+  .text {
+    font-size: 1.3rem;
+  }
+  .input-wrapper {
+    font-size: 1.2rem;
+  }
+  input {
+    font-size: 1.2rem;
+  }
+  #left-text {
+    align-items: baseline;
+  }
+  #right-text {
+    font-size: 1rem;
+  }
+  .flex-container {
+    justify-content: space-between;
+    max-width: 100%;
+  }
+  .box-height > span {
+    font-size: 1.2rem;
   }
   .right-half {
     min-width: unset;
   }
+  .header1 {
+    font-size: 2rem;
+  }
+  #lorem_text {
+    font-size: 1.3rem;
+  }
+  .content-box {
+    margin-top: 20px;
+  }
+  .header2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+  }
+  #id_span {
+    font-size: 1.3rem;
+  }
+  .today-container > div > i {
+    font-size: 1.5rem;
+  }
+  .today-container > div > input {
+    max-width: 140px;
+    border-radius: 14px;
+    font-size: 1.3rem;
+  }
+  .upcoming-container > div > i {
+    font-size: 1.5rem;
+  }
+  #upcoming-container_span {
+    font-size: 1.3rem;
+  }
+  .upcoming-container > div > input {
+    max-width: 140px;
+    border-radius: 14px;
+    font-size: 1.3rem;
+  }
+  #plus-symbol {
+    padding: 12px;
+  }
+}
+
+@media only screen and (max-width: 650px) and (min-width: 320px) {
+  #container {
+    flex-direction: column;
+  }
   .left-half {
-    min-width: 400px;
+    min-width: 320px;
   }
   #plus-symbol {
     padding: 10px;
+  }
+  #left-text {
+    margin-top: 20px;
+    position: relative;
+    justify-content: center;
+  }
+  #project_text {
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    gap: 18px;
+  }
+  .box-height {
+    max-width: 40%;
+    width: calc(40% - 10px);
+  }
+  #box-1 {
+    min-width: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 16px;
+    background-image: linear-gradient(315deg, #d19592 0%, #c81f70 80%);
+    color: white;
+    font-size: 25px;
+    margin: 0;
+  }
+  #box-2 {
+    min-width: 100xp;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 16px;
+    background-color: #05e8ba;
+    background-image: linear-gradient(315deg, #05e8ba 0%, #087ee1 74%);
+    color: white;
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin: 0;
+  }
+  #box-3 {
+    min-width: 100px;
+    text-align: center;
+    line-height: 100px;
+    background-color: #6e72fc;
+    background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%);
+    color: white;
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin: 0;
+  }
+  #box-4 {
+    min-width: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 16px;
+    background-color: #2876f9;
+    background-image: linear-gradient(315deg, #2876f9 0%, #6d17cb 74%);
+    color: white;
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin: 0;
+  }
+  #box-5 {
+    min-width: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 16px;
+    background-color: #f5df2e;
+    background-image: linear-gradient(315deg, #f5df2e 0%, #f07654 74%);
+    color: white;
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin: 0;
+  }
+  #box-6 {
+    min-width: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 16px;
+    background-image: #393d53;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin: 0;
+  }
+  .right-half {
+    min-width: 320px;
+  }
+  .right-container {
+    width: 100%;
+    margin: 10px;
+  }
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .header2 {
+    margin-top: 10px;
+  }
+  .upcoming-container > div > input {
+    max-width: 70px;
+    font-size: 0.8rem;
+  }
+  .today-container > div > input {
+    max-width: 70px;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 808px) and (min-width: 640px) {
+  #container {
+    flex-direction: column;
+  }
+  .flex-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    margin-left: 0;
+  }
+  #right-text {
+    font-size: 1rem;
+  }
+  #box-1 {
+    min-width: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 16px;
+    background-image: linear-gradient(315deg, #d19592 0%, #c81f70 80%);
+    color: white;
+    font-size: 25px;
+    margin: 0;
+  }
+  #box-2 {
+    min-width: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 16px;
+    background-color: #05e8ba;
+    background-image: linear-gradient(315deg, #05e8ba 0%, #087ee1 74%);
+    color: white;
+    font-size: 25px;
+    margin: 0;
+  }
+  #box-3 {
+    min-width: 100px;
+    text-align: center;
+    line-height: 100px;
+    background-color: #6e72fc;
+    background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%);
+    color: white;
+    font-size: 25px;
+    margin: 0;
+  }
+  #box-4 {
+    min-width: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 16px;
+    background-color: #2876f9;
+    background-image: linear-gradient(315deg, #2876f9 0%, #6d17cb 74%);
+    color: white;
+    font-size: 25px;
+    margin: 0;
+  }
+  #box-5 {
+    min-width: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 16px;
+    background-color: #f5df2e;
+    background-image: linear-gradient(315deg, #f5df2e 0%, #f07654 74%);
+    color: white;
+    font-size: 25px;
+    margin: 0;
+  }
+  #box-6 {
+    min-width: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 16px;
+    background-image: #393d53;
+    color: white;
+    font-size: 25px;
+    margin: 0;
   }
 }
